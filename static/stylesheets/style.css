@@ -287,5 +287,5 @@ ul {
 
 
 #map {
-    height: 70vh;   
+    height: calc(100vh - 47px);   
 }
