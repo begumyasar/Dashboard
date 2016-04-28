@@ -2,7 +2,6 @@
 <html>
 <head>
 	<meta charset=utf-8 />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dashboard</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="static/stylesheets/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -11,7 +10,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body style="overflow:hidden;">
     
     <div class="wrapper">
     
@@ -51,48 +50,22 @@
 
             <div class="menuBtn" id="menuBtn"><img src="static/images/icons/arrow.svg" class="menuBtnArrow" id="menuBtnArrow"></div>
 
-            <h1 class="sectionTitle">Dashboard</h1>
-            <div class="row">
-                <article class="full-width-col">
-                    <ul class="statsMenu">
-                        <a href=""><li style="border-bottom: 3px solid #354052;">Day</li></a>
-                        <a href=""><li>Week</li></a>
-                        <a href=""><li>Month</li></a>
-                        <a href=""><li>Year</li></a>
-                    </ul>
-                    <div class="sensorstats">
-    <!--                    <canvas id="myChart"></canvas>-->
-                    </div>
-                </article>
+            <h1 class="sectionTitle">Map</h1>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27046.6606252959!2d4.92751112504511!3d52.35074987191254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609685745acbf%3A0xef9e6cd56410e1a1!2sAmsterdam-Oost%2C+Amsterdam!5e0!3m2!1snl!2snl!4v1461672594276" class="maps" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-            <div class="row">
-                <div class="one-third-col">
-                    <span class="">Small data area</span>
-                    <div class="contentArea">
-                    
-                    </div>
-                </div>
-
-                <div class="one-third-col">
-                    <span class="">Small data area</span>
-                    <div class="contentArea">
-                    
-                    </div>
-                </div>
-
-                <div class="one-third-col">
-                    <span class="">Small data area</span>
-                    <div class="contentArea">
-                    
-                    </div>
-                </div>
-            </div>
+            
         </div>
         
+<!--
+        <div class="remainingSpace">
+        
+        
+        </div>
+ 
+-->
     </div>
     
 </body>
-    <script src="static/js/Chart.js"></script>
     <script src="static/js/app.js"></script>
-    <script src="static/js/myChart.js"></script>
 </html>

@@ -9,7 +9,7 @@ html { font-size: 1em; }
 html, body {
     padding: 0;
     margin: 0;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     font-family: 'Poppins', 'Open Sans', Helvetica, Arial, sans-serif;
     background-color: #fffffc;
@@ -61,11 +61,11 @@ p {margin-bottom: 1.3em;}
             flex-wrap: wrap;
 }
 
-.rightSide {
-    width: 100px;
-    display: inline-block;
-    height: 100%;
+/*
+.remainingSpace {
+    background-color: #354052;
 }
+*/
 
 /* NAVIGATION */
 .sidebar {
@@ -158,7 +158,11 @@ ul {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1;
-    box-shadow: 0 0 5px rgba(0,0,0,1);
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+    min-height: 100%; min-height: 100vh;
+    box-shadow: -3px 0 3px 0 rgba(0,0,0,0.3);
     -webkit-transform: translate3d(0,0,0);
           transform: translate3d(0,0,0);
     -webkit-transition: -webkit-transform .3s;
@@ -175,10 +179,10 @@ ul {
 
 .menuBtn {
     position: absolute;
-    top: 27px;
+    top: 4.6em;
     left: 0;
     z-index: 1100;
-    background-color: #354052;
+    background-color: rgba(53, 64, 82, 1);
     width: 50px;
     height: 50px;
     border-top-right-radius: 6px;
@@ -201,16 +205,12 @@ ul {
 }
 
 .sectionTitle {
-    margin-left: 3em;
-    margin-right: 2em;
+    margin-left: 32px;
+    margin-right: 32px;
     margin-top: 0.5em;
     font-weight: 400;
     color: #354052;
     border-bottom: 1px solid #354052;
-}
-
-.statsMenu {
-    margin-left: 3em;
 }
 
 .statsMenu li {
@@ -229,17 +229,23 @@ ul {
 
 .sensorstats {
     width: 100%;
-    height: 500px;
-    background-color: #dfeaf2;
-    border-top: 2px solid #c7dcea;
+    height: 600px;
+    background-color: #6684C7;
+    margin-top: 0.5em;
+/*
+    border-bottom: 0.5em solid #6684C7;
+    border-left: 0.5em solid #6684C7;
+*/
 }
 
 #myChart {
-    height: 500px !important;
+    max-height: 700px !important;
+    width: 100% !important;
 }
 
 /* COLS */
 .row {
+    position: relative;
     padding: 1em;
     display: -webkit-box;
     display: -webkit-flex;
@@ -248,6 +254,12 @@ ul {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+}
+
+.full-width-col {
+    width: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .one-third-col {
@@ -285,4 +297,9 @@ ul {
     }
 }
 
+.maps {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: -5.5em;
+}
 

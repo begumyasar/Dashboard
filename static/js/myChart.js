@@ -2,7 +2,7 @@ var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     datasets: [
         {
-            label: "My First dataset",
+            label: "Sensor 1",
 
             // Boolean - if true fill the area under the line
             fill: false,
@@ -68,7 +68,7 @@ var data = {
             yAxisID: "y-axis-0",
         },
         {
-            label: "My Second dataset",
+            label: "Sensor 2",
             fill: false,
             backgroundColor: "rgba(255,205,86,0.4)",
             borderColor: "rgba(255,205,86,1)",
