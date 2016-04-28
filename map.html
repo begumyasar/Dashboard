@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="static/stylesheets/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins:300,700' rel='stylesheet' type='text/css'>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+    
+    <div class="wrapper">
+    
+        <div class="sidebar">
+            <nav class="navigation">
+                <h1 class="navTitle">Tuigg</h1>
+                <ul class="nav-ul">
+                    <span class="ulTitle">navigation</span>
+                    <a class="navLink" href="index.html">
+                        <li class="navigationLi"><img class="navIcon" src="static/images/icons/home.svg"><span class="navText">Home</span></li>    
+                    </a>
+                    <a class="navLink" href="map.html">
+                        <li class="navigationLi"><img class="navIcon" src="static/images/icons/marker.svg"><span class="navText">Map</span></li>    
+                    </a>
+                    <a class="navLink" href="#">
+                        <li class="navigationLi"><img class="navIcon" src="static/images/icons/message.svg"><span class="navText">Messages</span></li>    
+                    </a>
+                    <a class="navLink" href="#">
+                        <li class="navigationLi"><img class="navIcon" src="static/images/icons/users.svg"><span class="navText">Menu item 4</span></li>    
+                    </a>
+                    <a class="navLink" href="#">
+                        <li class="navigationLi"><img class="navIcon" src="static/images/icons/settings.svg"><span class="navText">Menu item 5</span></li>    
+                    </a>
+                </ul>
+                <ul class="nav-ul logout">
+                    <span class="ulTitle">logout</span>
+                    <a class="navLink" href="#">
+                        <li class="navigationLi"><img class="navIcon" src="static/images/icons/logout.svg"><span class="navText">Logout</span></li>    
+                    </a>
+                </ul>
+
+            </nav>
+            
+        </div>
+    
+        <div class="content isOpen" id="content">
+
+            <div class="menuBtn" id="menuBtn"><img src="static/images/icons/arrow.svg" class="menuBtnArrow menuBtnRotate" id="menuBtnArrow"></div>
+
+            <h1 class="sectionTitle">Dashboard</h1>
+
+            <article class="full-width-col">
+                <div id="map">
+                    
+                </div>
+            </article>
+        </div>
+ 
+    </div>
+    
+</body>
+    <script src="static/js/Chart.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/myChart.js"></script>
+    <script src="static/js/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+</html>
