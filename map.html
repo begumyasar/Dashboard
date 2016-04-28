@@ -53,38 +53,10 @@
             <h1 class="sectionTitle">Dashboard</h1>
 
             <article class="full-width-col">
-                <ul class="statsMenu">
-                    <a href=""><li style="border-bottom: 3px solid #354052;">Day</li></a>
-                    <a href=""><li>Week</li></a>
-                    <a href=""><li>Month</li></a>
-                    <a href=""><li>Year</li></a>
-                </ul>
-                <div class="sensorstats">
-                    <canvas id="myChart"></canvas>
+                <div id="map">
+                    
                 </div>
             </article>
-            <div class="row">
-                <div class="one-third-col">
-                    <span class="">Small data area</span>
-                    <div class="contentArea">
-                    
-                    </div>
-                </div>
-
-                <div class="one-third-col">
-                    <span class="">Small data area</span>
-                    <div class="contentArea">
-                    
-                    </div>
-                </div>
-
-                <div class="one-third-col">
-                    <span class="">Small data area</span>
-                    <div class="contentArea">
-                    
-                    </div>
-                </div>
-            </div>
         </div>
  
     </div>
@@ -94,4 +66,6 @@
     <script src="static/js/app.js"></script>
     <script src="static/js/myChart.js"></script>
     <script src="static/js/map.js"></script>
+     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
 </html>
