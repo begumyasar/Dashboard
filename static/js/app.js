@@ -1,4 +1,4 @@
-var openMenu = (function(){
+function openMenu() {
     var menuBtn = document.getElementById('menuBtn');
     var menuBtnArrow = document.getElementById('menuBtnArrow');
     var content = document.getElementById('content');
@@ -8,6 +8,6 @@ var openMenu = (function(){
         menuBtnArrow.classList.toggle('menuBtnRotate');
     });
     
-}());
+};
 
 openMenu();
