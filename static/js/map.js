@@ -122,11 +122,12 @@ function updateData() {
     var month = currentDate.getUTCMonth() + 1;
     var year = currentDate.getUTCFullYear();
     
-    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/esp1/null')
+    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/esp1/true')
         .then(function(response) {
            return response.json(); 
         })
         .then(function(data) {
+            console.log(data);
            ldr1Data = data.length;
            
            if (ldr1Data > 9) { ldr1Data = 9; }
@@ -134,11 +135,12 @@ function updateData() {
            createMarkers(ldr1Data, ldr2Data);
         });
         
-    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/esp2/null')
+    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/esp2/true')
         .then(function(response) {
            return response.json(); 
         })
         .then(function(data) {
+            console.log(data);
            ldr2Data = data.length;
            
            if (ldr2Data > 9) { ldr2Data = 9; }
