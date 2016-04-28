@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset=utf-8 />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dashboard</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="static/stylesheets/style.css" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
@@ -16,7 +17,7 @@
     
         <div class="sidebar">
             <nav class="navigation">
-                <h1 class="navTitle">Tuigg</h1>
+                <h1 class="navTitle">Tuapp</h1>
                 <ul class="nav-ul">
                     <span class="ulTitle">navigation</span>
                     <a class="navLink" href="map.html">
@@ -43,25 +44,55 @@
             
         </div>
     
-        <div class="content isOpen" id="content">
+        <div class="content" id="content">
 
-            <div class="menuBtn" id="menuBtn"><img src="static/images/icons/arrow.svg" class="menuBtnArrow menuBtnRotate" id="menuBtnArrow"></div>
+            <div class="menuBtn" id="menuBtn"><img src="static/images/icons/arrow.svg" class="menuBtnArrow" id="menuBtnArrow"></div>
 
             <h1 class="sectionTitle">Dashboard</h1>
-
-            <article class="full-width-col">
-                <div id="map" class="maps">
+            <div class="row">
+                <article class="full-width-col">
+                    <ul class="statsMenu">
+                        <a href=""><li style="border-bottom: 3px solid #354052;">Day</li></a>
+                        <a href=""><li>Week</li></a>
+                        <a href=""><li>Month</li></a>
+                        <a href=""><li>Year</li></a>
+                    </ul>
+                    <div class="sensorstats">
+    <!--                    <canvas id="myChart"></canvas>-->
+                        <canvas id="myChart" width="1100" height="400"></canvas>
+                    </div>
+                </article>
+            </div>
+<!--
+            <div class="row">
+                <div class="one-third-col">
+                    <span class="">Small data area</span>
+                    <div class="contentArea">
                     
+                    </div>
                 </div>
-            </article>
+
+                <div class="one-third-col">
+                    <span class="">Small data area</span>
+                    <div class="contentArea">
+                    
+                    </div>
+                </div>
+
+                <div class="one-third-col">
+                    <span class="">Small data area</span>
+                    <div class="contentArea">
+                    
+                    </div>
+                </div>
+            </div>
+-->
         </div>
- 
+        
     </div>
     
 </body>
-    <script src="static/js/Chart.js"></script>
     <script src="static/js/app.js"></script>
-    <script src="static/js/myChart.js"></script>
-    <script src="static/js/map.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script src="static/js/Chart.js"></script>
+    <script type="text/javascript" src="static/js/data.js"></script>
 </html>
