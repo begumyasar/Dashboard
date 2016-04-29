@@ -80,7 +80,7 @@ p {margin-bottom: 1.3em;}
     margin: 0;
     color: #fff;
     padding: 0.5em 0.5em 0.3em;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 300;
     border-bottom: 1px solid #293345;
 }
@@ -486,4 +486,7 @@ ul {
             filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
             -webkit-filter: blur(3px) grayscale(1);
                     filter: blur(3px) grayscale(1);
+}
+.content-wrapper{
+    margin: 2rem;
 }
