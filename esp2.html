@@ -23,9 +23,11 @@
                     <a class="navLink" href="index.html">
                         <li class="navigationLi"><img class="navIcon" src="static/images/icons/marker.svg"><span class="navText">Map</span></li>    
                     </a>
+<!--
                     <a class="navLink" href="messages.html">
                         <li class="navigationLi"><img class="navIcon" src="static/images/icons/message.svg"><span class="navText">Messages</span></li>    
                     </a>
+-->
                     <a class="navLink" href="accounts.html">
                         <li class="navigationLi"><img class="navIcon" src="static/images/icons/users.svg"><span class="navText">Account</span></li>    
                     </a>
@@ -45,16 +47,22 @@
 
             <div class="menuBtn" id="menuBtn"><img src="static/images/icons/arrow.svg" class="menuBtnArrow" id="menuBtnArrow"></div>
 
+<<<<<<< HEAD
             <h1 class="sectionTitle">Linnaeusparkweg</h1>
             <section class="sensorSection">
+=======
+            <h1 class="sectionTitle">Dashboard</h1>
+            <ul class="statsMenu">
+                <a href="#day"><li style="border-bottom: 3px solid #354052;">Day</li></a>
+                <a href="#week"><li>Week</li></a>
+                <a href="#month"><li>Month</li></a>
+                <a href="#year"><li>Year</li></a>
+            </ul>
+            <section class="sensorSection" id="day">
+>>>>>>> 87ba039d4ed79298ca0494200a479b7551365a1e
                 <div class="row">
                     <article class="full-width-col">
-                        <ul class="statsMenu">
-                            <a href=""><li style="border-bottom: 3px solid #354052;">Day</li></a>
-                            <a href=""><li>Week</li></a>
-                            <a href=""><li>Month</li></a>
-                            <a href=""><li>Year</li></a>
-                        </ul>
+                        
                         <div class="sensorstats">
                             <canvas id="VoltapleinMelding" width="1100" height="400"></canvas>
                         </div>
@@ -76,13 +84,38 @@
                     </article>
                 </div>
             </section>
+            
+            <section class="sensorSection" id="week">
+                <div class="row">
+                    <article class="full-width-col">
+                        
+                        <div class="sensorstats">
+                            <canvas id="LinnaeusparkwegMelding" width="1100" height="400"></canvas>
+                        </div>
+                    </article>
+                </div>
+                <div class="row smallStats">
+                    <div class="statsSmall">
+                        <canvas id="LinnaeusparkwegActivity"></canvas>
+                    </div>
+                    <div class="statsSmall2">
+                        <canvas id="LinnaeusparkwegSound"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <article class="full-width-col">
+                        <div class="sensorstats2">
+                            <canvas id="LinnaeusparkwegLight" width="1100" height="400"></canvas>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
         
     </div>
     
 </body>
-    <script>var esp = 'esp2';</script>
     <script src="static/js/app.js"></script>
     <script src="static/js/Chart.js"></script>
-    <script type="text/javascript" src="static/js/data.js"></script>
+    <script type="text/javascript" src="static/js/data2.js"></script>
 </html>
