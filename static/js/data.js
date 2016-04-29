@@ -104,7 +104,7 @@
         var month = currentDate.getUTCMonth() + 1;
         var year = currentDate.getUTCFullYear();
         
-        fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/' + esp)
+        fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/esp2')
             .then(function(response) {
             return response.json(); 
             })
@@ -122,7 +122,7 @@
                 voltapleinChart.update();
             });
             
-        fetch('http://api.leandervanbaekel.nl/activity/day/' + day + '/' + month + '/' + year + '/' + esp)
+        fetch('http://api.leandervanbaekel.nl/activity/day/' + day + '/' + month + '/' + year + '/esp2')
             .then(function(response) {
             return response.json(); 
             })
@@ -146,7 +146,7 @@
                 voltapleinActivityChart.update();
             });
             
-        fetch('http://api.leandervanbaekel.nl/average/day/' + esp + '/' + day + '/' + month + '/' + year)
+        fetch('http://api.leandervanbaekel.nl/average/day/esp1/' + day + '/' + month + '/' + year)
             .then(function(response) {
                 return response.json();
             })
@@ -173,16 +173,6 @@
     var interval = setInterval(updateData, 5000);
     
     window.onbeforeunload = function(event) {
-        voltapleinChart.data.datasets[0].data = [];
-        voltapleinActivityChart.data.datasets[0].data = [];
-        voltapleinLightChart.data.datasets[0].data = [];
-        voltapleinSoundChart.data.datasets[0].data = [];
-        voltapleinChart.update();
-        voltapleinActivityChart.update();
-        voltapleinLightChart.update();
-        voltapleinSoundChart.update();
-        
-        
         interval.clear();
     };
 }());
