@@ -49,7 +49,7 @@ var voltapleinActivityChart = new Chart(voltapleinActivity, {
 });
 
 var sound = {
-    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
+    labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
     datasets: [
         {
             label: "Voltaplein (Sound)",
@@ -58,7 +58,7 @@ var sound = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17]  
+            data: []  
         }
     ]
 };
@@ -74,7 +74,7 @@ var voltapleinSoundChart = new Chart(voltapleinSound, {
 });
 
 var light = {
-    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
+    labels: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
     datasets: [
         {
             label: "Voltaplein (Light)",
@@ -83,7 +83,7 @@ var light = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17]  
+            data: []  
         }
     ]
 };
@@ -108,6 +108,7 @@ function updateData() {
            return response.json(); 
         })
         .then(function(data) {
+            console.log('alarm', data);
             var index = 0;
             var chartData = [];
             
@@ -126,6 +127,7 @@ function updateData() {
            return response.json(); 
         })
         .then(function(data) {
+            console.log('activity', data);
             var temp = [];
             
             for (var i = 0; i < 24; i++) { temp[i] = { count: 0, activity: 0 }; }
@@ -138,16 +140,35 @@ function updateData() {
             var chartData =  temp.map(function(d) {
                if (d.count === 0) return 0;
                
-               return d.activity / d.count; 
+               return (d.activity / d.count).toFixed(2); 
             });
             
             voltapleinActivityChart.data.datasets[0].data = chartData;
             voltapleinActivityChart.update();
         });
-    
-    voltapleinActivityChart.update();
-    voltapleinSoundChart.update();
-    voltapleinLightChart.update();
+        
+    fetch('http://api.leandervanbaekel.nl/average/day/' + esp + '/' + day + '/' + month + '/' + year)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            console.log('averages', data);
+            var ldr = [];
+            var pir = [];
+            var sound = [];
+            
+            data.forEach(function(d) {
+               d.ldr ? ldr.push(d.ldr) : ldr.push(0);
+               d.pir ? pir.push(Math.round(d.pir)) : pir.push(0);
+               d.sound ? sound.push(d.sound) : sound.push(0);
+            });
+            
+            voltapleinSoundChart.data.datasets[0].data = sound;
+            voltapleinSoundChart.update();
+            
+            voltapleinLightChart.data.datasets[0].data = ldr;
+            voltapleinLightChart.update();
+        });
 }
 
 updateData();
