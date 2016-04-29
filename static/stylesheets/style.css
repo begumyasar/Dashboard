@@ -447,11 +447,6 @@ ul {
     font-size: 1.2em;
 }
 
-<<<<<<< HEAD
-.accountWrapper {
-    
-=======
-.content-wrapper{
-    margin: 2rem;
->>>>>>> 9b650ae683d9ad024ab5c837ce5ae29ad66e7919
+.active {
+    border-bottom: 3px solid #354052 !important;
 }
