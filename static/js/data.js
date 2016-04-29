@@ -1,6 +1,4 @@
 (function() {
-    console.log(esp);
-    
     var data = {
         labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
         datasets: [
@@ -134,8 +132,8 @@
                 for (var i = 0; i < 24; i++) { temp[i] = { count: 0, activity: 0 }; }
                 
                 data.forEach(function(d) {
-                temp[d.hour].count++;
-                temp[d.hour].activity += d.value; 
+                    temp[d.hour].count++;
+                    temp[d.hour].activity += d.value; 
                 });
                 
                 var chartData =  temp.map(function(d) {
@@ -179,6 +177,10 @@
         voltapleinActivityChart.data.datasets[0].data = [];
         voltapleinLightChart.data.datasets[0].data = [];
         voltapleinSoundChart.data.datasets[0].data = [];
+        voltapleinChart.update();
+        voltapleinActivityChart.update();
+        voltapleinLightChart.update();
+        voltapleinSoundChart.update();
         
         
         interval.clear();
