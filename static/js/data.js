@@ -175,6 +175,12 @@
     var interval = setInterval(updateData, 5000);
     
     window.onbeforeunload = function(event) {
+        voltapleinChart.data.datasets[0].data = [];
+        voltapleinActivityChart.data.datasets[0].data = [];
+        voltapleinLightChart.data.datasets[0].data = [];
+        voltapleinSoundChart.data.datasets[0].data = [];
+        
+        
         interval.clear();
     };
 }());
