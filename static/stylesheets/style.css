@@ -450,7 +450,7 @@ ul {
 /*Notifications*/
 
 .hide {
-    display: none;
+    /*display: none;*/
 }
 
 .simple-notification {
@@ -486,6 +486,21 @@ ul {
             filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
             -webkit-filter: blur(3px) grayscale(1);
                     filter: blur(3px) grayscale(1);
+}
+
+.confirmation {
+    width: 7rem;
+    margin-left: .5em;
+    height: 2.5rem;
+    background: #354052;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    border-radius: .5rem;
+}
+
+.confirmation:first-of-type{
+    margin-left: 0;
 }
 .content-wrapper{
     margin: 2rem;
