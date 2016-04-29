@@ -49,8 +49,8 @@
             <h1 class="sectionTitle">Linnaeusparkweg</h1>
             <section class="sensorSection">
             <ul class="statsMenu">
-                <a href="#day"><li style="border-bottom: 3px solid #354052;">Day</li></a>
-                <a href="#week"><li>Week</li></a>
+                <a id="day" href="#day"><li id="day-link" class="active">Day</li></a>
+                <a id="week" href="#week"><li id="week-link">Week</li></a>
                 <a href="#month"><li>Month</li></a>
                 <a href="#year"><li>Year</li></a>
                 </ul>
@@ -59,21 +59,25 @@
                     <article class="full-width-col">
                         
                         <div class="sensorstats">
+                            <h2 class="headerChart">Meldingen</h2>
                             <canvas id="LinnaeusparkwegMelding" width="1100" height="400"></canvas>
                         </div>
                     </article>
                 </div>
                 <div class="row smallStats">
                     <div class="statsSmall">
+                        <h2 class="headerChart">Activity</h2>
                         <canvas id="LinnaeusparkwegActivity"></canvas>
                     </div>
                     <div class="statsSmall2">
+                        <h2 class="headerChart">Sound</h2>
                         <canvas id="LinnaeusparkwegSound"></canvas>
                     </div>
                 </div>
                 <div class="row">
                     <article class="full-width-col">
                         <div class="sensorstats2">
+                            <h2 class="headerChart">Light</h2>
                             <canvas id="LinnaeusparkwegLight" width="1100" height="400"></canvas>
                         </div>
                     </article>

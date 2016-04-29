@@ -1,4 +1,28 @@
 (function() {
+    var active = 'day';
+    
+    document.getElementById('day').addEventListener('click', function(event) {
+       event.preventDefault(); 
+       
+       active = 'day';
+       
+       document.getElementById('week-link').classList.remove('active');
+       document.getElementById('day-link').classList.add('active');
+       
+       updateData();
+    });
+    
+    document.getElementById('week').addEventListener('click', function(event) {
+       event.preventDefault(); 
+       
+       active = 'week';
+       
+       document.getElementById('day-link').classList.remove('active');
+       document.getElementById('week-link').classList.add('active');
+       
+       updateData();
+    });
+    
     var data = {
         labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
         datasets: [
@@ -101,10 +125,11 @@
     function updateData() {
         var currentDate = new Date();
         var day = currentDate.getUTCDate();
+        if (active === 'week') day = day - 7;
         var month = currentDate.getUTCMonth() + 1;
         var year = currentDate.getUTCFullYear();
         
-        fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/esp2')
+        fetch('http://api.leandervanbaekel.nl/alarm/' + active + '/' + day + '/' + month + '/' + year + '/esp2')
             .then(function(response) {
             return response.json(); 
             })
@@ -122,7 +147,7 @@
                 voltapleinChart.update();
             });
             
-        fetch('http://api.leandervanbaekel.nl/activity/day/' + day + '/' + month + '/' + year + '/esp2')
+        fetch('http://api.leandervanbaekel.nl/activity/' + active + '/' + day + '/' + month + '/' + year + '/esp2')
             .then(function(response) {
             return response.json(); 
             })
@@ -146,7 +171,7 @@
                 voltapleinActivityChart.update();
             });
             
-        fetch('http://api.leandervanbaekel.nl/average/day/esp1/' + day + '/' + month + '/' + year)
+        fetch('http://api.leandervanbaekel.nl/average/' + active + '/esp1/' + day + '/' + month + '/' + year)
             .then(function(response) {
                 return response.json();
             })
