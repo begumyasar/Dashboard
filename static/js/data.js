@@ -99,3 +99,6 @@ var myLineChart = new Chart(voltapleinLight, {
     position: 'bottom',
     defaultFontColor: "#FFFFFF"
 });
+
+
+
