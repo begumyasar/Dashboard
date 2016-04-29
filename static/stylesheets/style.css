@@ -159,8 +159,8 @@ ul {
         -ms-flex: 1;
             flex: 1;
     width: 100%;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     min-height: 100%; min-height: 100vh;
     box-shadow: -3px 0 3px 0 rgba(0,0,0,0.3);
     -webkit-transform: translate3d(0,0,0);
@@ -205,8 +205,6 @@ ul {
 }
 
 .sectionTitle {
-    margin-left: 32px;
-    margin-right: 32px;
     margin-top: 0.5em;
     font-weight: 400;
     color: #354052;
@@ -260,8 +258,6 @@ ul {
 
 .full-width-col {
     width: 100%;
-    margin-left: 1em;
-    margin-right: 1em;
 }
 
 .one-third-col {
@@ -300,7 +296,6 @@ ul {
 }
 
 .maps {
-    width: 95%;
     margin-top: 4em;
     height: 80vh;
 }

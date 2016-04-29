@@ -30,8 +30,8 @@ var activity = {
     datasets: [
         {
             label: "Voltaplein (Activiteit)",
-            backgroundColor: "rgba(255,100,100,0.5)",
-            borderColor: "rgba(255,0,0,1)",
+            backgroundColor: "rgba(0,172,80,0.5)",
+            borderColor: "rgba(0,172,80,1)",
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
@@ -55,8 +55,8 @@ var sound = {
     datasets: [
         {
             label: "Voltaplein (Sound)",
-            backgroundColor: "rgba(255,100,100,0.5)",
-            borderColor: "rgba(255,0,0,1)",
+            backgroundColor: "rgba(244,138,56,0.5)",
+            borderColor: "rgba(244,138,56,1)",
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
@@ -80,8 +80,8 @@ var light = {
     datasets: [
         {
             label: "Voltaplein (Light)",
-            backgroundColor: "rgba(255,100,100,0.5)",
-            borderColor: "rgba(255,0,0,1)",
+            backgroundColor: "rgba(23,35,51,0.5)",
+            borderColor: "rgba(23,35,51,1)",
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
@@ -99,7 +99,6 @@ var voltapleinLightChart = new Chart(voltapleinLight, {
     position: 'bottom',
     defaultFontColor: "#FFFFFF"
 });
-
 function updateData() {
     var currentDate = new Date();
     var day = currentDate.getUTCDate();
