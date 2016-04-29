@@ -501,6 +501,21 @@ ul {
             -webkit-filter: blur(3px) grayscale(1);
                     filter: blur(3px) grayscale(1);
 }
+
+.confirmation {
+    width: 7rem;
+    margin-left: .5em;
+    height: 2.5rem;
+    background: #354052;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    border-radius: .5rem;
+}
+
+.confirmation:first-of-type{
+    margin-left: 0;
+}
 .content-wrapper{
     margin: 2rem;
 }
