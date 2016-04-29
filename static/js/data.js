@@ -1,5 +1,5 @@
 var data = {
-    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
     datasets: [
         {   // Aantal meldingen
             label: "Voltaplein (meldingen)",
@@ -8,12 +8,10 @@ var data = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17, 6]
+            data: []
         }
     ]
 };
-
-
 
 var voltaplein = document.getElementById("VoltapleinMelding");
 
@@ -26,7 +24,7 @@ var voltapleinChart = new Chart(voltaplein, {
 });
 
 var activity = {
-    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
     datasets: [
         {
             label: "Voltaplein (Activiteit)",
@@ -35,7 +33,7 @@ var activity = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17, 6]  
+            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17]  
         }
     ]
 };
@@ -51,7 +49,7 @@ var voltapleinActivityChart = new Chart(voltapleinActivity, {
 });
 
 var sound = {
-    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
     datasets: [
         {
             label: "Voltaplein (Sound)",
@@ -60,7 +58,7 @@ var sound = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17, 6]  
+            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17]  
         }
     ]
 };
@@ -76,7 +74,7 @@ var voltapleinSoundChart = new Chart(voltapleinSound, {
 });
 
 var light = {
-    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
+    labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
     datasets: [
         {
             label: "Voltaplein (Light)",
@@ -85,7 +83,7 @@ var light = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17, 6]  
+            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17]  
         }
     ]
 };
@@ -110,10 +108,19 @@ function updateData() {
            return response.json(); 
         })
         .then(function(data) {
-            console.log(data);
+            var index = 0;
+            var chartData = [];
+            
+            for (var i = 0; i < 24; i++) { chartData[i] = 0 }
+            
+            data.forEach(function(d) {
+               chartData[d.hour]++;
+            });
+            
+            voltapleinChart.data.datasets[0].data = chartData;
+            voltapleinChart.update();
         });
     
-    voltapleinChart.update();
     voltapleinActivityChart.update();
     voltapleinSoundChart.update();
     voltapleinLightChart.update();
