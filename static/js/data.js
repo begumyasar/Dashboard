@@ -106,7 +106,7 @@ function updateData() {
     var month = currentDate.getUTCMonth() + 1;
     var year = currentDate.getUTCFullYear();
     
-    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year)
+    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/' + esp)
         .then(function(response) {
            return response.json(); 
         })
