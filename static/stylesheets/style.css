@@ -463,7 +463,7 @@ ul {
 
 
 .hide {
-    /*display: none;*/
+    display: none;
 }
 
 .simple-notification {
