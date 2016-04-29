@@ -33,7 +33,7 @@ var activity = {
             borderWidth: 3,
             hoverBackgroundColor: "rgba(53,64,82,0.5)",
             hoverBorderColor: "rgba(53,64,82,1)",
-            data: [3, 5, 2, 0, 0, 1, 0, 0, 0, 1, 5, 6, 4, 5, 3, 6, 5, 4, 3, 8, 12, 14, 19, 17]  
+            data: []  
         }
     ]
 };
@@ -119,6 +119,30 @@ function updateData() {
             
             voltapleinChart.data.datasets[0].data = chartData;
             voltapleinChart.update();
+        });
+        
+    fetch('http://api.leandervanbaekel.nl/activity/day/' + day + '/' + month + '/' + year + '/' + esp)
+        .then(function(response) {
+           return response.json(); 
+        })
+        .then(function(data) {
+            var temp = [];
+            
+            for (var i = 0; i < 24; i++) { temp[i] = { count: 0, activity: 0 }; }
+            
+            data.forEach(function(d) {
+               temp[d.hour].count++;
+               temp[d.hour].activity += d.value; 
+            });
+            
+            var chartData =  temp.map(function(d) {
+               if (d.count === 0) return 0;
+               
+               return d.activity / d.count; 
+            });
+            
+            voltapleinActivityChart.data.datasets[0].data = chartData;
+            voltapleinActivityChart.update();
         });
     
     voltapleinActivityChart.update();
