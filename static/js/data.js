@@ -17,7 +17,7 @@ var data = {
 
 var voltaplein = document.getElementById("VoltapleinMelding");
 
-var myBarChart = new Chart(voltaplein, {
+var voltapleinChart = new Chart(voltaplein, {
     type: 'bar',
     data: data,
     responsive: true,
@@ -42,7 +42,7 @@ var activity = {
 
 var voltapleinActivity = document.getElementById("VoltapleinActivity");
 
-var myLineChart = new Chart(voltapleinActivity, {
+var voltapleinActivityChart = new Chart(voltapleinActivity, {
     type: 'line',
     data: activity,
     responsive: true,
@@ -67,7 +67,7 @@ var sound = {
 
 var voltapleinSound = document.getElementById("VoltapleinSound");
 
-var myLineChart = new Chart(voltapleinSound, {
+var voltapleinSoundChart = new Chart(voltapleinSound, {
     type: 'line',
     data: sound,
     responsive: true,
@@ -92,13 +92,32 @@ var light = {
 
 var voltapleinLight = document.getElementById("VoltapleinLight");
 
-var myLineChart = new Chart(voltapleinLight, {
+var voltapleinLightChart = new Chart(voltapleinLight, {
     type: 'line',
     data: light,
     responsive: true,
     position: 'bottom',
     defaultFontColor: "#FFFFFF"
 });
+function updateData() {
+    var currentDate = new Date();
+    var day = currentDate.getUTCDate();
+    var month = currentDate.getUTCMonth() + 1;
+    var year = currentDate.getUTCFullYear();
+    
+    fetch('http://api.leandervanbaekel.nl/alarm/day/' + day + '/' + month + '/' + year + '/' + esp)
+        .then(function(response) {
+           return response.json(); 
+        })
+        .then(function(data) {
+            console.log(data);
+        });
+    
+    voltapleinChart.update();
+    voltapleinActivityChart.update();
+    voltapleinSoundChart.update();
+    voltapleinLightChart.update();
+}
 
-
-
+updateData();
+setInterval(updateData, 5000);
