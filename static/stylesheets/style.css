@@ -159,8 +159,8 @@ ul {
         -ms-flex: 1;
             flex: 1;
     width: 100%;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
     min-height: 100%; min-height: 100vh;
     box-shadow: -3px 0 3px 0 rgba(0,0,0,0.3);
     -webkit-transform: translate3d(0,0,0);
@@ -179,7 +179,7 @@ ul {
 
 .menuBtn {
     position: absolute;
-    top: 4.6em;
+    top: 4.4em;
     left: 0;
     z-index: 1100;
     background-color: rgba(53, 64, 82, 1);
@@ -246,14 +246,8 @@ ul {
 /* COLS */
 .row {
     position: relative;
-    padding: 1em;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+/*    padding: 1em;*/
+    padding-bottom: 1em;
 }
 
 .full-width-col {
@@ -300,40 +294,68 @@ ul {
     height: 80vh;
 }
 
+.smallStats {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+}
+
 .statsSmall{
-    width: 47%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-right: 1em;
     height: auto;
     background-color: #fff;
     padding: 2em;
     padding-bottom: 1em;
     border-radius: 0.3rem;
-    margin-left: 2rem;
+    margin-bottom: 1em;
 }
 
 .statsSmall2{
-    width: 47%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-left: 1em;
     height: auto;
     background-color: #fff;
     padding: 2em;
     padding-bottom: 1em;
     border-radius: 0.3rem;
-    margin-right: 2rem;
-    float: right;
-    margin-top: -22rem;
+/*    float: right;*/
+/*    margin-top: -22rem;*/
+    margin-bottom: 1em;
 }
 
 .sensorstats2 {
-    width: 95.5%;
     height: auto;
     background-color: #fff;
-    padding: 2em;
+    padding: 1em;
     padding-bottom: 1em;
     border-radius: 0.3rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
 /*
     border-bottom: 0.5em solid #6684C7;
     border-left: 0.5em solid #6684C7;
 */
 }
+
+@media screen and (max-width: 900px){
+    .statsSmall,
+    .statsSmall2 {
+        margin-left: 0;
+        margin-right: 0;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 100%;
+            -ms-flex: 1 1 100%;
+                flex: 1 1 100%;
+    }
+}
+
 

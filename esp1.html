@@ -43,32 +43,36 @@
             <div class="menuBtn" id="menuBtn"><img src="static/images/icons/arrow.svg" class="menuBtnArrow" id="menuBtnArrow"></div>
 
             <h1 class="sectionTitle">Dashboard</h1>
-            <div class="row">
-                <article class="full-width-col">
-                    <ul class="statsMenu">
-                        <a href=""><li style="border-bottom: 3px solid #354052;">Day</li></a>
-                        <a href=""><li>Week</li></a>
-                        <a href=""><li>Month</li></a>
-                        <a href=""><li>Year</li></a>
-                    </ul>
-                    <div class="sensorstats">
-                        <canvas id="VoltapleinMelding" width="1100" height="400"></canvas>
+            <section class="sensorSection">
+                <div class="row">
+                    <article class="full-width-col">
+                        <ul class="statsMenu">
+                            <a href=""><li style="border-bottom: 3px solid #354052;">Day</li></a>
+                            <a href=""><li>Week</li></a>
+                            <a href=""><li>Month</li></a>
+                            <a href=""><li>Year</li></a>
+                        </ul>
+                        <div class="sensorstats">
+                            <canvas id="VoltapleinMelding" width="1100" height="400"></canvas>
+                        </div>
+                    </article>
+                </div>
+                <div class="row smallStats">
+                    <div class="statsSmall">
+                        <canvas id="VoltapleinActivity"></canvas>
                     </div>
-                </article>
-            </div>
-            <div class="statsSmall">
-                <canvas id="VoltapleinActivity"></canvas>
-            </div>
-            <div class="statsSmall2">
-                <canvas id="VoltapleinSound"></canvas>
-            </div>
-            <div>
-                <article class="full-width-col">
-                    <div class="sensorstats2">
-                        <canvas id="VoltapleinLight" width="1100" height="400"></canvas>
+                    <div class="statsSmall2">
+                        <canvas id="VoltapleinSound"></canvas>
                     </div>
-                </article>
-            </div>
+                </div>
+                <div class="row">
+                    <article class="full-width-col">
+                        <div class="sensorstats2">
+                            <canvas id="VoltapleinLight" width="1100" height="400"></canvas>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
         
     </div>
