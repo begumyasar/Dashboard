@@ -13,8 +13,6 @@ var data = {
     ]
 };
 
-
-
 var voltaplein = document.getElementById("VoltapleinMelding");
 
 var voltapleinChart = new Chart(voltaplein, {
