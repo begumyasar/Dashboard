@@ -446,3 +446,44 @@ ul {
     color: #fff;
     font-size: 1.2em;
 }
+
+/*Notifications*/
+
+.hide {
+    display: none;
+}
+
+.simple-notification {
+    padding: 2em;
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    border: 2px solid #354052;
+    text-align: center;
+}
+
+.simple-notification > * {
+    color: #354052;
+}
+
+.simple-notification svg {
+    fill: #354052;
+}
+.close-notification {
+    width: 1em;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.blur {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
+    -webkit-filter: blur(3px) grayscale(1);
+            filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="3" /><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /></filter></svg>#filter');
+            -webkit-filter: blur(3px) grayscale(1);
+                    filter: blur(3px) grayscale(1);
+}
